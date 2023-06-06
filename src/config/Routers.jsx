@@ -17,6 +17,7 @@ const Routers = () => {
     }, [pathname])
     return (
         <Routes>
+            <Route path='/pj-movie/' element={<Navigate to='/home' />} />
             <Route path='/' element={<Navigate to='/home' />} />
             <Route path='/home' element={<Home />} />
 
