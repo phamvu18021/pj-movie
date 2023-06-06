@@ -1,0 +1,133 @@
+@use '../../scss/' as *;
+
+button {
+    cursor: pointer;
+    font-family: $font-family;
+}
+
+.btn{
+    border: 4px solid transparent;
+    background-color: $main-color;
+    color: #fff;
+    border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:  box-shadow 0.3s ease;
+    position: relative;
+}
+
+
+.btn:hover{
+    box-shadow:  0px 0px 7px 15px #64c54b4d;
+}
+
+.btn-outline{
+    border: 3px solid $white;
+    background-color: transparent;
+    color: $white;
+    box-shadow: unset;
+    transition: color .3s ease, background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-outline:hover{
+    box-shadow: unset;
+    color: $main-color;
+    background-color: $white;
+}
+
+.btn.small{
+    border-width: 2px;
+    padding: 0.25rem 1.5rem;
+    font-size: 1rem;
+}
+
+.btnplay{
+    border: 4px solid transparent;
+    background-color: $main-color;
+    color: #fff;
+    border-radius: 5px;
+    width: 6.4rem;
+    height: 3.2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    transition:  box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+
+}
+.btnplay:hover{
+  
+        background-color: #05fd6c;
+   
+}
+
+.btnsave{
+    border: 4px solid transparent;
+    background-color: #e4e4e4ee;
+    color: #111319;
+    border-radius: 5px;
+    width: 6.4rem;
+    height: 3.2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    transition:  box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+    &:hover{
+         background-color:#faf8f8ee ;
+    }
+   
+
+}
+
+
+.btnz {
+    border: 4px solid transparent;
+    background-color: $main-color;
+    color: $white;
+    border-radius: $border-radius;
+    padding: 0.5rem 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0px 0px 7px 8px #64c54b4d;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+}
+
+.btnz:hover {
+    box-shadow: 0px 0px 7px 15px #64c54b4d;
+}
+
+.btn-outlinez {
+    border: 3px solid $white;
+    background-color: transparent;
+    color: $white;
+    box-shadow: unset;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-outlinez:hover {
+    box-shadow: unset;
+    color: $main-color;
+    background-color: $white;
+}
+
+.btnz.small {
+    border-width: 2px;
+    padding: 0.25rem 1.5rem;
+    font-size: 1rem;
+}

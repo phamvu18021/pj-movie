@@ -1,0 +1,186 @@
+@use "../../scss/" as *;
+
+.movie-card {
+    position: relative;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 160%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    width: 100% !important;
+
+
+    .btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $black;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 5px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover::before {
+            opacity: 0.8;
+        }
+
+        &:hover .btn {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+}
+
+
+.movie-card-container {
+    display: grid;
+
+    grid-template-columns: 33% 66%;
+
+    .movie-card2 {
+        float: left;
+
+        position: relative;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 160%;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        width: 100% !important;
+
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: $black;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 5px;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover::before {
+                opacity: 0.8;
+            }
+
+            &:hover .btn {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+
+    .movie-card-info {
+        margin-left: 1rem;
+        .mvctitle{
+            font-size: 1rem;
+           color: white;
+           font-weight: 600;
+        }
+        p{
+            font-size: 0.7rem;
+             color: rgba(255, 255, 255, 0.507);
+        }
+
+        .star i {
+            color: #dcee38;
+        }
+
+        @include mobile {
+            p {
+                font-size: 2rem;
+            }
+        }
+    }
+
+
+}
+
+
+.movie-card3 {
+    position: relative;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 160%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    width: 100% !important;
+
+
+    .btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $black;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 5px;
+    }
+
+
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover::before {
+            opacity: 0.8;
+        }
+
+        &:hover .btn {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+}
+
+.mv3container {
+    .btn__closemv {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.2rem;
+        color: rgb(221, 220, 220);
+        background-color: chocolate;
+    }
+
+    span {
+        font-size: 0.8rem;
+        color: rgba(240, 255, 255, 0.678);
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+}

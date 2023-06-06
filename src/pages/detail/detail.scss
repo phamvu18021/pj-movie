@@ -1,0 +1,526 @@
+@use "../../scss/" as *;
+
+.banner {
+    height: 50vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+    }
+}
+
+.movie-content {
+    @include flex(flex-start, flex-start);
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -200px;
+    position: relative;
+    padding: 0 2rem;
+    // border:  3px solid red;
+
+    &__poster {
+        flex: 0.7;
+
+        @include mobile {
+            display: none;
+        }
+
+        &__img {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            padding-top: 165%;
+            padding-left: 3rem;
+        }
+    }
+
+    &__info {
+        width: 70%;
+        padding-left: 2rem;
+        position: relative;
+
+        @include mobile {
+            width: 100%;
+            padding-left: 0;
+        }
+
+        &>* {
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .genres {
+            &>*~* {
+                margin-left: 0.5rem;
+            }
+
+            &__item {
+                padding: 0.5rem 1.5rem;
+                // border: 2px solid $white;
+                border-radius: 5px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                background-color: rgba(0, 0, 0, 0.288);
+            }
+        }
+    }
+}
+
+.casts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+
+    &__item {
+        &__img {
+            padding-top: 160px;
+            background-size: cover;
+            margin-bottom: 0.5rem;
+        }
+
+        &__name {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.video {
+    // display: flex;
+    // justify-content: center;
+    // border: 2 solid salmon;
+    z-index: 9999;
+
+
+    .videp_iframe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    iframe {
+        // border: 2px solid white;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+.trailer__list {
+
+    height: 100%;
+    width: 80%;
+
+    @include mobile {
+        width: 100%;
+        position: relative;
+    }
+
+}
+
+.btns {
+    display: flex;
+    position: relative;
+    
+}
+
+.iconhrsa {
+    float: left;
+}
+
+.comment {
+    width: auto;
+    height: auto;
+    background-color: white;
+    display: block;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    color: black;
+
+
+
+    .avata {
+        float: left;
+        padding-left: 0.5rem;
+    }
+
+    img {
+
+        width: 3rem;
+        height: 3rem;
+    }
+
+    p {
+        color: black;
+    }
+}
+
+.cmt_count {
+    display: flex;
+    text-align: center;
+    margin: 0 0 2rem 2rem;
+    font-size: 1.3rem;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+
+    span {
+        font-weight: 600;
+    }
+}
+
+.fields_texta input {
+    margin-left: 1rem;
+    width: 86%;
+
+    height: 3.5rem;
+
+    border: 0.1px solid rgba(0, 0, 0, 0.203);
+    border-radius: 0% !important;
+    background-color: white !important;
+    color: black;
+
+}
+
+.btn_cmt {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 6rem;
+
+    button {
+        width: 6rem;
+        height: 2.5rem;
+        background-color: #295b91;
+        color: white;
+    }
+}
+
+.Comment_list {
+    padding-bottom: 0.9rem;
+    display: flex;
+    color: black;
+}
+
+.Comment_list_rep {
+    border-left: 1px solid black;
+    padding-bottom: 0.5rem;
+    display: flex;
+    color: black;
+}
+
+
+
+.avata {
+    padding-left: 0.5rem;
+}
+
+.comment_fields {
+    padding-left: 0.5rem;
+    width: 60%;
+
+    .nameandcontent {
+        padding-left: 0.5rem;
+        width: 100%;
+        background-color: #03121a1a;
+        border-radius: 5px;
+
+        .user__name p {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1f32dd !important;
+        }
+         
+        .comment__content p {
+            position: relative;
+            color: black;
+            height: auto;
+            font-size: 1.1rem;
+        }
+    }
+
+
+}
+
+.comment_fieldss {
+    margin-left: 0.5rem;
+    width: auto;
+    height: 5rem;
+    margin-bottom: 2rem;
+
+}
+
+.button_commnet {
+    display: flex;
+}
+
+.timeagoo {
+    margin-top: 0.3rem;
+    margin-left: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.btnlike {
+    display: flex;
+    margin-left: 0.5rem;
+    color: black;
+
+    button {
+        border: none;
+        font-weight: 600;
+        background-color: unset;
+    }
+}
+
+
+.likeon {
+    display: flex;
+    margin-left: 0.5rem;
+    color: rgb(71, 147, 182);
+}
+
+.dislikeon {
+    display: flex;
+    margin-left: 0.5rem;
+    color: rgb(180, 43, 43);
+}
+
+.likeon2 {
+    display: flex;
+    margin-left: 0.5rem;
+    color: rgb(71, 147, 182);
+}
+
+.dislikeon2 {
+    display: flex;
+    margin-left: 0.5rem;
+    color: rgb(180, 43, 43);
+}
+
+.Comment_list_rep2 {
+    border-left: 1px solid black;
+    padding-bottom: 0.5rem;
+    display: flex;
+    color: black;
+}
+
+.comment__content2 {
+    position: relative;
+}
+
+.avata2 {
+    padding-left: 0.5rem;
+}
+
+.comment_fields2 {
+    margin-left: 0.5rem;
+}
+
+.button_commnet2 {
+    display: flex;
+}
+
+.btnlike2 {
+    display: flex;
+    margin-left: 0.5rem;
+    color: black;
+    button {
+        border: none;
+        font-weight: 600;
+        background-color: unset;
+    }
+}
+
+
+
+
+
+
+
+
+.detail-body {
+    padding-left: 4rem;
+    position: relative;
+
+    @include mobile {
+        padding: auto;
+        padding-right: 4rem;
+    }
+
+}
+
+.ctop {
+    display: flex;
+    height: auto;
+    width: auto;
+    // border: 1px solid white;
+    max-width: 1440px;
+
+    justify-content: center;
+
+    @include mobile {
+        display: block;
+    }
+}
+
+.topmovie {
+    float: left;
+    width: 25%;
+    // border: solid 1px blue;
+margin-left: 3rem;
+    @include mobile {
+        width: 100%;
+        display: block;
+        float: none;
+        margin: 0;
+    }
+}
+
+.video-list {
+    // border: 1px solid yellow;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    .swiper-slide {
+        // border: 1px solid green;
+        align-content: center;
+        width: 100% !important;
+    }
+}
+
+
+
+.box_detail {
+    color: rgb(218, 210, 210);
+    background-color: #1F282D;
+    // border: 4px solid #295b91;
+    // height: 20rem;
+
+}
+
+.tablist_detail {
+    background-color: rgb(15, 15, 15);
+
+}
+
+.movie_info_grid {
+    display: grid;
+    grid-template-areas: 'gridleft gridright';
+    gap: 10px;
+
+    p {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: white;
+    }
+
+    span {
+        font-size: 0.9rem;
+    }
+}
+
+.grid_left {
+    grid-area: gridleft;
+}
+
+.grid_right {
+    grid-area: gridright;
+}
+
+
+
+
+
+
+
+
+//rate view detail
+
+.rateview {
+    display: flex;
+    background-color: #69a9c952;
+    padding: 1rem;
+}
+
+.rate {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid white;
+    width: 60%;
+}
+
+.rate_circle {
+    width: 8%;
+    margin-right: 1rem;
+}
+
+.rate_star {
+    float: right;
+
+    span {
+        font-weight: 600;
+    }
+}
+
+.viewandrelease {
+    margin-left: 2rem;
+
+    span {
+        font-weight: 600;
+    }
+}
+
+.video_ep{
+    p{
+        color: #eaeaeeea;
+    }
+    background-color: #295b913d;
+    margin: 2rem;
+    padding: 1rem;
+    overflow-y: scroll;
+    height: 15rem;
+    button{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-weight: 600;
+        margin:0.2rem 0.2rem ;
+        color: white;
+        background-color: #6a6b6bee;
+        font-size: 0.9rem;
+        
+    }
+    // &::-webkit-scrollbar{
+    //     width: 12px;
+    // }
+}
+
+.video_ep::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+     background:blue !important;
+}

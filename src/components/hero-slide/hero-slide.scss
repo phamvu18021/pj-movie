@@ -1,0 +1,164 @@
+
+@use "../../scss/" as *;
+
+
+
+
+.hero-slide {
+    margin-bottom: 3rem;
+}
+
+.hero-slide__item {
+    padding: 9rem 0;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+    }
+
+    &__content {
+        @include flex(flex-end,center );
+        position: relative;
+
+        &__info {
+            width: 40%;
+            // padding: 4rem 3rem;
+            position: relative;
+
+            @include tablet {
+                width: 100%;
+            }
+
+            & > * ~ * {
+                margin-top: 1.6rem;
+            }
+
+            .title {
+                font-size: 3rem;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 6rem;
+                @include tablet {
+                    font-size: 4rem;
+                }
+            }
+
+            .overview {
+                font-weight: 600;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 25px;
+                -webkit-line-clamp: 3;
+                height: 75px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+            }
+
+            .btns > * ~ * {
+                margin-left: 0.7rem;
+            }
+
+            .btns,
+            .title,
+            .overview {
+                opacity: 0;
+                transform: translateY(-100px);
+                transition: transform 0.5s ease, opacity 0.5s ease;
+            }
+        }
+
+        &__poster {
+            flex: 1;
+            @include flex(center, center);
+            position: relative;
+
+            img {
+                width: 400px;
+                border-radius: 5px;
+                box-shadow: $box-shadow;
+
+                transform: scale(0);
+                transition: transform 0.7s ease;
+            }
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &.active > &__content > &__content__poster {
+        img {
+            transform: scale(1);
+        }
+    }
+
+    &.active > &__content > &__content__info {
+        .btns,
+        .title,
+        .overview {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .title {
+            transition-delay: 0.3s, 0.3s;
+        }
+
+        .overview {
+            transition-delay: 0.6s, 0.6s;
+        }
+
+        .btns {
+            transition-delay: 0.9s, 0.9s;
+        }
+    }
+}
+.genresz {
+    width:max-content;
+    &>*~* {
+        margin-left: 0.5rem;
+    }
+
+    &__item {
+        padding: 0.5rem 1.5rem;
+        // border: 2px solid $white;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: rgba(10, 17, 59, 0.603);
+    }
+}
+
+.star i {
+    color: #dcee38;
+}
+
+.star {
+    span{
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
+

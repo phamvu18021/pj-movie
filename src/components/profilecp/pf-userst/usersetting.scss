@@ -1,0 +1,130 @@
+@use '../../../scss/' as *;
+.pf_uscontainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.pf_fields {
+    width: 60%;
+    // position: relative;
+    margin-top: 4rem !important;
+    display: block;
+    margin-bottom: 3rem;
+
+    // align-self: center;
+    // justify-content: center;
+    .pf_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+    }
+
+
+    .user__info_us {
+        width: 100%;
+
+        .user__info_title {
+            p {
+                margin: 1rem 0 1rem 0;
+                color: rgba(255, 255, 255, 0.582);
+            }
+        }
+
+
+        .user__info_in {
+            span {
+                font-weight: 600;
+                color: white;
+            }
+
+            background-color: rgba(58, 66, 64, 0.541);
+            padding: 1rem 1rem 1rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .user__info_info {
+                display: flex;
+
+                align-items: center;
+
+                .user_info_info_z {
+                    margin-left: 1rem;
+
+                    span {
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                img {
+                    height: 4rem;
+                    width: 4rem;
+                }
+            }
+        }
+
+    }
+
+
+
+    .user__security {
+        margin-top: 2rem;
+
+        .user_sc_body {
+            padding-top: 0.2rem;
+            background-color: rgba(58, 66, 64, 0.541);
+            padding-bottom: 2rem;
+        }
+
+        .user__security_title {
+            p {
+                margin: 1rem 0 0rem 0;
+                color: rgba(255, 255, 255, 0.582);
+            }
+        }
+
+        .user__sc_acc {
+            width: 90%;
+            height: 2rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.301);
+            margin: 2rem 0 0rem 5%;
+
+            .sp_a {
+                color: rgba(113, 119, 119, 0.87);
+            }
+
+            .sp_btn {
+                color: white;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @include mobile{
+        width: 80%;
+    }
+}
+
+.edit_info{
+    
+    input{
+        background-color: rgba(58, 66, 64, 0.541);;
+        color: white !important;
+        border-radius: 0% !important;
+    }
+    i{
+        height: 50%;
+        background-color: beige;
+      
+        color: black;
+    }
+}

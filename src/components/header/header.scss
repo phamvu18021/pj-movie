@@ -1,0 +1,412 @@
+@use '../../scss/' as *;
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-right: 10px;
+    @include flex(center, unset);
+
+    img {
+        margin-right: 10px;
+        width: 40px;
+
+        @include mobile {
+            width: 30px;
+            margin-right: 0;
+        }
+    }
+}
+
+
+.header {
+
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    transition: height .3s ease, background-color 0.3s ease;
+
+    &.shrink {
+        height: $header-shrink-height;
+        background-color: $body-bg;
+        display: inline-block;
+    }
+
+    &__wrap {
+        @include flex(center, space-between);
+        height: 100%;
+        padding: 0 2rem;
+
+        @include mobile {
+            justify-content: center;
+        }
+    }
+
+    &__navr {
+        @include flex(center, flex-end);
+        list-style: none;
+
+        &>*~* {
+            margin-left: 2rem;
+        }
+
+        li {
+            display: inline-block;
+            padding: 5px 0;
+            font-weight: 500;
+            position: relative;
+            font-size: 1.5rem;
+
+            &:hover ul .dropdown__menu_profile {
+                color: $main-color;
+                display: block;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                transition: width 0.5s ease;
+                height: 2px;
+                background-color: $main-color;
+                color: $main-color;
+            }
+
+            &.active::after,
+            &:hover::after {
+                width: 100%;
+            }
+
+
+
+
+            // ul .dropdown__menu_profile {
+            //     width: 100%;
+            //     background: #22438C;
+            //     position: absolute;
+            //     z-index: 99;
+            //     display: none;
+
+            // }
+
+            // ul .dropdown__menu_profile li:hover {
+            //     background: #66cf46;
+            // }
+        }
+
+        &_user {
+            i {
+                @include flex(center, unset);
+                font-size: 1.3rem;
+                font-weight: 400 !important;
+
+                color: unset;
+                cursor: pointer;
+
+            }
+
+            p {
+                font-size: 0.6rem !important;
+                color: unset !important;
+                cursor: pointer;
+            }
+
+
+
+            img {
+                width: 2.2rem;
+                height: 2.2rem;
+                justify-content: center;
+                align-items: center;
+            }
+
+            // span{
+            //     margin-left: 0.5rem;
+            // }
+            @include mobile {
+                display: none
+            }
+
+        }
+
+        &_app {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2rem;
+            width: 3rem;
+            border: #e8e8f3 solid 1px;
+            // &:hover{
+            //     border:   $main-color solid 1px;;
+            // }
+
+            i {
+                @include flex(center, center);
+                font-size: 1.1rem;
+                color: unset;
+                cursor: pointer;
+                float: left;
+                margin-right: 4px;
+            }
+
+            p {
+                @include flex(center, center);
+
+                font-size: 0.8rem;
+                color: unset;
+                cursor: pointer;
+
+            }
+        }
+
+        @include mobile {
+            display: none;
+        }
+
+    }
+
+    &__nav {
+        @include flex(center, flex-end);
+
+        &>*~* {
+            margin-left: 2rem;
+        }
+
+
+        li {
+            padding: 5px 0;
+            font-weight: 700;
+            position: relative;
+            font-size: 1.3rem;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                transition: width 0.5s ease;
+                height: 2px;
+                background-color: $main-color;
+            }
+
+            &.active::after,
+            &:hover::after {
+                width: 100%;
+            }
+        }
+
+        @include mobile {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 5rem;
+            width: 100%;
+            background-color: $body-bg;
+            padding: 0 2rem;
+            box-shadow: $box-shadow;
+
+            @include flex(center, space-between);
+
+            &>*~* {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.dropdown__menu_profile {
+    width: 13rem;
+    visibility: hidden;
+    position: absolute;
+    background-color: #1A1C22;
+    left: -5rem;
+    border-radius: 5px;
+    border: 0.1px solid white;
+
+    justify-content: center;
+    align-items: center;
+
+    li {
+        display: flex;
+        font-weight: 300 !important;
+
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            justify-content: center;
+            align-items: center;
+            margin-right: 0.5rem;
+        }
+
+        p {
+            display: flex;
+            font-size: 0.8rem !important;
+            color: #f7f7f7da;
+            justify-content: center;
+            align-items: center;
+        }
+
+        span {
+            font-size: 0.8rem !important;
+        }
+    }
+}
+
+.header__user__info {
+    display: flex;
+    justify-content: center !important;
+    background-image: linear-gradient(to right, #02531b, #3fc269) !important;
+    align-items: center !important;
+    padding: 1rem 0rem 1rem !important;
+
+
+
+}
+
+ul.header__navr li:hover ul.dropdown__menu_profile {
+    opacity: 1;
+    visibility: visible;
+}
+
+.aaa {
+    cursor: pointer;
+}
+
+.header__search {
+    // left: 18%;
+    display: flex;
+    position: relative;
+    background: rgba(255, 255, 255, 0.404);
+    border-radius: 5px;
+    align-items: center;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+
+    input {
+        border: none !important;
+
+        background-color: rgba(232, 232, 243, 0.01);
+
+
+    }
+
+    .header__searchicon {
+        position: absolute;
+        top: 15%;
+        left: 80%;
+        width: 3rem;
+        height: 90%;
+        display: flex;
+
+
+        i {
+
+            width: 3.5rem;
+            height: 1.5rem;
+            top: 15%;
+            left: 80%;
+            display: flex;
+            color: white;
+
+            align-items: center;
+            justify-content: center;
+            border-left: 3px solid rgb(255, 255, 255, 0.6);
+
+        }
+
+        @include mobile {
+            left: 90%;
+        }
+
+
+    }
+
+
+    @include mobile {
+        width: 70vw;
+        margin-top: 0.5rem;
+    }
+
+
+}
+
+.dropdown__menu_profile li {
+    display: flex;
+    justify-content: space-between;
+
+    i {
+        margin-left: 1rem;
+        margin-right: 0.5rem;
+    }
+
+    span {
+        margin-left: 0.5rem;
+    }
+
+
+
+    .arrow_frop i {
+        display: flex !important;
+        align-content: last baseline !important;
+    }
+
+    p {
+        // display: flex;
+        // float: right;
+        // align-items: center !important;
+    }
+}
+
+.header__btnlogin {
+
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #e8e8f3;
+
+    button {
+        width: 5rem;
+        height: 2rem;
+        background-color: #21bb52;
+        color: #e8e8f3;
+        border-radius: 10px;
+    }
+}
+
+.pinheader {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    margin-top: 1rem !important;
+}
+
+.mobile__menu {
+    display: none;
+
+    @include mobile {
+        display: block;
+        position: absolute;
+        top: 1%;
+        left: 5%;
+        font-size: 2rem;
+    }
+}
+
+.test2 {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}

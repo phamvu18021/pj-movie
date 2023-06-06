@@ -1,0 +1,61 @@
+@use '../../scss/' as *;
+
+.avatar {
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+}
+
+.fields {
+    padding-top: 8rem;
+
+
+}
+
+.user__info {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    p {
+
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin-left: 1rem;
+    }
+}
+
+.edit_info {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.pfcontainer {
+    display: flex;
+    position: relative;
+    height: auto;
+
+}
+
+.outletpf {
+    width: 100%;
+
+ 
+    height: auto;
+
+}
+
+.SidebarPf {
+    margin-top: 3.5rem;
+    height:100%;
+    width: 22%;
+    @include mobile {
+        position: absolute;
+        left: -50%;
+    }
+
+}
